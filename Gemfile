@@ -34,9 +34,11 @@ gem 'foreman'
 gem 'dotenv'
 
 group :development do
-  gem 'dm-sqlite-adapter'
+  gem 'dm-mysql-adapter'
 end
-
+group :production do
+  gem 'dm-postgres-adapter'
+end
 
 
 # Padrino Stable Gem
