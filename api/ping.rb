@@ -12,11 +12,22 @@ class Api
     end
     route_param :id do
       get do
+        ping = Ping.get(params[:id])
 
-        {id: Ping.get(params[:id]).id,
-         test: ENV['TEST']}
+        {id: ping.id,
+         state: ping.state}
       end
     end
 
+    desc "Create a ping."
+    params do
+      requires :state, type: String, desc: "Your state."
+    end
+    post do
+      ping = Ping.create(:state=>params[:state])
+      {id:ping.id}
+    end
+
   end
+
 end
