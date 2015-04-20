@@ -15,10 +15,11 @@ gem 'unicorn'
 
 # Project requirements
 gem 'rake'
-gem 'mysql'
+gem 'mysql2'
 # Component requirements
 gem 'bcrypt'
 gem 'slim'
+gem 'dm-mysql-adapter'
 gem 'dm-validations'
 gem 'dm-timestamps'
 gem 'dm-migrations'
@@ -33,7 +34,7 @@ gem 'padrino-grape', github: "adamluzsi/padrino-grape"
 gem 'foreman'
 gem 'dotenv'
 
-gem 'dm-mysql-adapter'
+
 
 # group :production do
 # 	gem 'dm-postgres-adapter'
