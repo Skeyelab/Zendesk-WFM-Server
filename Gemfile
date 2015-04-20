@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.5"
+ruby "2.1.1"
 
 # Distribute your app as a gem
 # gemspec
@@ -33,6 +33,7 @@ gem 'padrino-grape', github: "adamluzsi/padrino-grape"
 gem 'foreman'
 gem 'dotenv'
 gem 'mysql2'
+gem 'mysql'
 
 
 

@@ -8,7 +8,3 @@ db/*.db
 .*.sw*
 
 .env.*
-
-.ruby-version
-
-.ruby-gemset
