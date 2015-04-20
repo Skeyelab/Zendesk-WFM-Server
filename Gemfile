@@ -33,9 +33,9 @@ gem 'padrino-grape', github: "adamluzsi/padrino-grape"
 gem 'foreman'
 gem 'dotenv'
 
-group :development do
-  gem 'dm-mysql-adapter'
-end
+gem 'dm-mysql-adapter'
+gem 'mysql2'
+
 # group :production do
 # 	gem 'dm-postgres-adapter'
 # end
