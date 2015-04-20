@@ -15,7 +15,6 @@ gem 'unicorn'
 
 # Project requirements
 gem 'rake'
-gem 'mysql2'
 # Component requirements
 gem 'bcrypt'
 gem 'slim'
@@ -33,6 +32,7 @@ gem 'padrino-grape', github: "adamluzsi/padrino-grape"
 
 gem 'foreman'
 gem 'dotenv'
+gem 'mysql2'
 
 
 
