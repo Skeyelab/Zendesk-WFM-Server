@@ -15,7 +15,7 @@ gem 'unicorn'
 
 # Project requirements
 gem 'rake'
-gem 'mysql2'
+gem 'mysql'
 # Component requirements
 gem 'bcrypt'
 gem 'slim'
