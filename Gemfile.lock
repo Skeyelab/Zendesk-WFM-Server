@@ -91,6 +91,7 @@ GEM
     moneta (0.7.20)
     multi_json (1.11.0)
     multi_xml (0.5.5)
+    mysql2 (0.3.18)
     padrino (0.12.5)
       padrino-admin (= 0.12.5)
       padrino-cache (= 0.12.5)
@@ -189,6 +190,7 @@ DEPENDENCIES
   dotenv
   foreman
   grape
+  mysql2
   padrino (= 0.12.5)
   padrino-grape!
   pry-padrino
