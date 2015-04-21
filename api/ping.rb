@@ -35,7 +35,7 @@ class Api
       when "save"
         state = "saved"
       end
-      assignee=Assignee.first_or_create({:email=>params[:email]},{:id=>params[:assignee_id]})
+      assignee=Assignee.first_or_create({:id=>params[:assignee_id]},{:email=>params[:email]})
       ping = Ping.create(:state=>state, :domain => params[:domain],:assignee_id => assignee.id, :ticket_id=>params[:ticket_id])
       {id:ping.id}
     end
