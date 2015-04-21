@@ -10,4 +10,5 @@ class Ping
   property :created_at, DateTime
 
   belongs_to :assignee
+
 end
