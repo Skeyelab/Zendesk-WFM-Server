@@ -50,7 +50,7 @@ module Wfmserver
     #   end
     #
     get '/' do
-      'Hello world!'
+      'Hello world.'
     end
     ##
     # You can manage errors like:
