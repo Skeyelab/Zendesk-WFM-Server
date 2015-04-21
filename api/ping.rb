@@ -27,13 +27,13 @@ class Api
 
       case params[:state]
       when "start"
-        state = "ticket opened"
+        state = "opened"
       when "stop"
-        state = "ticket deactivated"
+        state = "tab deactivated"
       when "destroy"
-        state = "ticket tab closed"
+        state = "tab closed"
       when "save"
-        state = "ticket saved"
+        state = "saved"
       end
 
 
