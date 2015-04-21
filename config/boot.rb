@@ -40,6 +40,12 @@ Dotenv.load ".env.#{Padrino.env}"
 #
 Padrino.before_load do
   Padrino.dependency_paths << Padrino.root('api/*.rb')
+
+  require 'will_paginate'
+  require 'will_paginate/data_mapper'
+  require 'will_paginate/view_helpers/sinatra'
+  include WillPaginate::Sinatra::Helpers
+  WillPaginate.per_page = 100
 end
 ##
 # Add your after (RE)load hooks here

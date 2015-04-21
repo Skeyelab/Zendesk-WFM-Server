@@ -28,6 +28,8 @@ gem 'dm-core'
 gem 'pry-padrino'
 gem 'grape'
 gem 'padrino-grape', github: "adamluzsi/padrino-grape"
+gem 'will_paginate', '~>3.0'
+
 
 gem 'foreman'
 gem 'dotenv'

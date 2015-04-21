@@ -52,3 +52,5 @@ div class="tabs-content"
                   = form_tag url(:pings, :destroy, :id => ping.id), :method => :delete do
                     = submit_tag pat(:delete), :class =>'list-row-action-popover-delete-one-btn btn btn-danger btn-small'
                     div class='btn btn-default btn-small cancel' = pat(:cancel)
+div class="apple_pagination"
+  = will_paginate @pings, :container => false 

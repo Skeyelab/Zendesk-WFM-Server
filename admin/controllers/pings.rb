@@ -1,7 +1,7 @@
 Wfmserver::Admin.controllers :pings do
   get :index do
     @title = "Pings"
-    @pings = Ping.all
+    @pings = Ping.all.paginate(:page => params[:page], :order => 'id')
     render 'pings/index'
   end
 
@@ -78,9 +78,9 @@ Wfmserver::Admin.controllers :pings do
     end
     ids = params[:ping_ids].split(',').map(&:strip)
     pings = Ping.all(:id => ids)
-    
+
     if pings.destroy
-    
+
       flash[:success] = pat(:destroy_many_success, :model => 'Pings', :ids => "#{ids.to_sentence}")
     end
     redirect url(:pings, :index)
