@@ -49,7 +49,9 @@ module Wfmserver
     #     disable :asset_stamp # no asset timestamping for dev
     #   end
     #
-
+    get '/' do
+      'Hello world!'
+    end
     ##
     # You can manage errors like:
     #
