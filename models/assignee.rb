@@ -3,7 +3,7 @@ class Assignee
 
   # property <name>, <type>
   property :id, Serial
-  property :email, String
+  property :email, String, :required => true
 
   has n, :pings
 end
