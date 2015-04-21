@@ -36,7 +36,7 @@ class Api
         state = "saved"
       end
 
-      ping = Ping.create(:state=>state, :domain => params[:domain],:assignee_id => params[:assignee_id], :ticket_id=>params[:ticket_id])
+      ping = Ping.create(:state=>state, :domain => params[:domain],:assignee_id => params[:assignee_id], :ticket_id=>params[:ticket_id],:email=>params[:email])
       {id:ping.id}
     end
 
