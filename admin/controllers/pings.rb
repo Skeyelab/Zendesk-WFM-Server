@@ -1,7 +1,7 @@
 Wfmserver::Admin.controllers :pings do
   get :index do
     @title = "Pings"
-    @pings = Ping.all.paginate(:page => params[:page], :order => 'id')
+    @pings = Ping.all(:order => [ :id.desc ]).paginate(:page => params[:page])
     render 'pings/index'
   end
 
