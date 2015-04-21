@@ -93,6 +93,7 @@ GEM
     multi_xml (0.5.5)
     mysql (2.9.1)
     mysql2 (0.3.18)
+    newrelic_rpm (3.11.2.286)
     padrino (0.12.5)
       padrino-admin (= 0.12.5)
       padrino-cache (= 0.12.5)
@@ -193,6 +194,7 @@ DEPENDENCIES
   grape
   mysql
   mysql2
+  newrelic_rpm
   padrino (= 0.12.5)
   padrino-grape!
   pry-padrino

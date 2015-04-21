@@ -33,7 +33,7 @@ gem 'foreman'
 gem 'dotenv'
 gem 'mysql2'
 gem 'mysql'
-
+gem 'newrelic_rpm'
 
 
 # group :production do
