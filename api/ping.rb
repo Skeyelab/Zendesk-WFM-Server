@@ -24,7 +24,20 @@ class Api
       requires :state, type: String, desc: "Your state."
     end
     post do
-      ping = Ping.create(:state=>params[:state], :domain => params[:domain],:assignee_id => params[:assignee_id], :ticket_id=>params[:ticket_id])
+
+      case params[:state]
+      when "start"
+        state = "ticket opened"
+      when "stop"
+        state = "ticket deactivated"
+      when "destroy"
+        state = "ticket tab closed"
+      when "save"
+        state = "ticket saved"
+      end
+
+
+      ping = Ping.create(:state=>state, :domain => params[:domain],:assignee_id => params[:assignee_id], :ticket_id=>params[:ticket_id])
       {id:ping.id}
     end
 
