@@ -7,6 +7,7 @@ class Ping
   property :ticket_id, Integer
   property :state, String
   property :domain, String
+  property :email, String
 
   property :created_at, DateTime
 end
