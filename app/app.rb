@@ -60,10 +60,6 @@ module Wfmserver
         t.border  = 1
       }
 
-      table.push Table::Head.new{ |r|
-        r.content = [row.domain,row.email,row.date,row.hour, row.count]
-      }
-
       summary.each do |row|
 
         table.push Table::Row.new{ |r|
