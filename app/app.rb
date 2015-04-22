@@ -50,7 +50,7 @@ module Wfmserver
     #   end
     #
     get '/' do
-      'Hello world.'
+      Ping.last.id
     end
     ##
     # You can manage errors like:
