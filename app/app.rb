@@ -54,7 +54,7 @@ module Wfmserver
 
     get '/test' do
 
-      summary = repository(:default).adapter.select('select domain,email,date(created_at) date, hour(`created_at`) hour,state as event ,count(*) count  from pings join assignees on pings.assignee_id = assignees.id group by email, date(created_at),hour(created_at), state  order by domain, email, created_at asc');
+      summary = repository(:default).adapter.select('select domain,email,date(created_at) date, hour(`created_at`) hour ,count(*) count  from pings join assignees on pings.assignee_id = assignees.id group by email, date(created_at),hour(created_at)  order by domain, email, created_at asc');
 
       table = HTML::Table.new{ |t|
         t.border  = 1
@@ -62,7 +62,7 @@ module Wfmserver
       summary.each do |row|
 
         table.push Table::Row.new{ |r|
-          r.content = [row.domain,row.email,row.date,row.hour,row.event, row.count]
+          r.content = [row.domain,row.email,row.date,row.hour, row.count]
         }
       end
       table.html
