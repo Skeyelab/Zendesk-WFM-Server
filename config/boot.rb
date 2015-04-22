@@ -2,8 +2,6 @@
 RACK_ENV = ENV['RACK_ENV'] ||= 'development'  unless defined?(RACK_ENV)
 PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
 
-ENV['RACK_ENV'] = 'development'
-
 # Load our dependencies
 require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
@@ -40,7 +38,8 @@ Dotenv.load ".env.#{Padrino.env}"
 #
 Padrino.before_load do
   Padrino.dependency_paths << Padrino.root('api/*.rb')
-
+  require 'html/table'
+  include HTML
   require 'will_paginate'
   require 'will_paginate/data_mapper'
   require 'will_paginate/view_helpers/sinatra'
