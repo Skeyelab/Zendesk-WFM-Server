@@ -59,6 +59,9 @@ module Wfmserver
       table = HTML::Table.new{ |t|
         t.border  = 1
       }
+      table.push Table::Row.new{ |r|
+        r.content = ["domain","email","date","hour", "count"]
+      }
 
       summary.each do |row|
 
