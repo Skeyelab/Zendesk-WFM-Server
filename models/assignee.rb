@@ -5,5 +5,7 @@ class Assignee
   property :id, Serial
   property :email, String, :required => true
 
+
+  belongs_to :domain
   has n, :pings
 end
