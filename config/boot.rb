@@ -45,11 +45,33 @@ Padrino.before_load do
   require 'will_paginate/view_helpers/sinatra'
   include WillPaginate::Sinatra::Helpers
   WillPaginate.per_page = 100
+
+  Backburner.configure do |config|
+    config.beanstalk_url    = ["beanstalk://"+ENV['BEANSTALK_HOST']+":11300"]
+    config.tube_namespace   = ENV['BEANSTALK_TUBE_NAMESPACE']
+    config.on_error         = lambda { |e| puts e }
+    config.max_job_retries  = 3 # default 0 retries
+    config.retry_delay      = 2 # default 5 seconds
+    config.default_priority = 65536
+    config.respond_timeout  = 300
+    config.default_worker   = Backburner::Workers::Forking
+    config.logger           = Logger.new(STDOUT)
+    config.primary_queue    = "wfmserver-jobs"
+    config.priority_labels  = { :custom => 50, :useless => 1000 }
+  end
+
+
 end
 ##
 # Add your after (RE)load hooks here
 #
 Padrino.after_load do
+  if ENV["REDISCLOUD_URL"]
+    uri = URI.parse(ENV["REDISCLOUD_URL"])
+    $redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+    Resque.redis = $redis
+  end
+
   DataMapper.finalize
 end
 

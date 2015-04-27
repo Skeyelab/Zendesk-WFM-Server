@@ -37,6 +37,7 @@ gem 'mysql2'
 gem 'mysql'
 gem 'newrelic_rpm'
 gem 'html-table', '~> 1.4.1'
+gem 'backburner'
 
 # group :production do
 # 	gem 'dm-postgres-adapter'
