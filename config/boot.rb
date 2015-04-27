@@ -54,7 +54,7 @@ Padrino.before_load do
     config.retry_delay      = 2 # default 5 seconds
     config.default_priority = 65536
     config.respond_timeout  = 300
-    config.default_worker   = Backburner::Workers::Forking
+    config.default_worker   = Backburner::Workers::ThreadsOnFork
     config.logger           = Logger.new(STDOUT)
     config.primary_queue    = "wfmserver-jobs"
     config.priority_labels  = { :custom => 50, :useless => 1000 }
