@@ -25,16 +25,6 @@ class Api
     end
     post do
 
-      case params[:state]
-      when "start"
-        state = "opened"
-      when "stop"
-        state = "tab deactivated"
-      when "destroy"
-        state = "tab closed"
-      when "save"
-        state = "saved"
-      end
       Backburner.enqueue Ping, params
 
     end

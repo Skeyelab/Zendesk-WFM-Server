@@ -6,14 +6,12 @@ class Ping
   property :ticket_id, Integer
   property :state, String
 
-  property :created_at, DateTime
+  property :created_at, DateTime, :index => true
 
   belongs_to :assignee
   belongs_to :domain
 
   def self.perform(params)
-
-
 
     case params["state"]
     when "start"

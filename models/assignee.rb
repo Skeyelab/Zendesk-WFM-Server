@@ -3,7 +3,7 @@ class Assignee
 
   # property <name>, <type>
   property :id, Serial
-  property :email, String, :required => true
+  property :email, String, :required => true, :index => true
 
 
   belongs_to :domain
