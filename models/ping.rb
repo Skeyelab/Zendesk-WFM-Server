@@ -7,6 +7,7 @@ class Ping
   property :state, String
 
   property :created_at, DateTime, :index => true
+  property :timestamp, DateTime, :index => true
 
   belongs_to :assignee
   belongs_to :domain
