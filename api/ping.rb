@@ -24,7 +24,7 @@ class Api
       requires :state, type: String, desc: "Your state."
     end
     post do
-
+      params.timestamp = Time.now
       Backburner.enqueue Ping, params
 
     end
