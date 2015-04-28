@@ -2,4 +2,4 @@
 # Zendesk-WFM-Server
 
 This is a server designed to collect "pings" from Zendesk.  
-(the client can be found here: )
+(the client can be found here: https://github.com/Skeyelab/Zendesk-WFM-Pinger)
