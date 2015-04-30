@@ -21,8 +21,8 @@ class Ping
       state = "tab deactivated"
     when "destroy"
       state = "tab closed"
-    when "save"
-      state = "saved"
+    else
+      state = params["state"]
     end
 
     domain=Domain.first_or_create({:domain=>params["domain"]})

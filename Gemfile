@@ -26,6 +26,7 @@ gem 'dm-constraints'
 gem 'dm-aggregates'
 gem 'dm-types'
 gem 'dm-core'
+gem 'dm-is-state_machine'
 gem 'pry-padrino'
 gem 'grape'
 gem 'padrino-grape', github: "adamluzsi/padrino-grape"
