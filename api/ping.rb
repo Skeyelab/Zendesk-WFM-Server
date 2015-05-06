@@ -6,6 +6,8 @@ class Api
 
   resource :ping do
 
+
+
     desc "Return a ping."
     params do
       requires :id, type: Integer, desc: "Ping id."

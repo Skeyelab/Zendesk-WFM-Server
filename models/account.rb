@@ -10,6 +10,7 @@ class Account
   property :email,            String
   property :crypted_password, String, :length => 70
   property :role,             String
+  property :api_key,          String, :length => 34
 
   # Validations
   validates_presence_of      :email, :role
@@ -52,5 +53,9 @@ class Account
 
   def encrypt_password
     self.crypted_password = ::BCrypt::Password.create(password) if password.present?
+  end
+
+  def set_api_key
+    self.api_key = generate_activation_code(34)
   end
 end
