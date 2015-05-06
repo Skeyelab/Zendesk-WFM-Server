@@ -26,7 +26,8 @@ class Api
 
         {id: assignee.id,
          selected_state: assignee.selected_state,
-         last_ping: assignee.pings.last.created_at}
+         last_ping: assignee.pings.last.created_at,
+         ticket: assignee.pings.last.ticket_id}
       end
     end
 
