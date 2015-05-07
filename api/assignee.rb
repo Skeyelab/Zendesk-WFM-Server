@@ -27,20 +27,20 @@ class Api
         {id: assignee.id,
          selected_state: assignee.selected_state,
          last_ping: assignee.pings.last.created_at,
-         ticket: assignee.pings.last.ticket_id}
+         ticket: assignee.pings.last.ticket_id,
+         timediff: time_diff(Time.now,Time.parse(assignee.pings.last.created_at.to_s))}
       end
     end
 
     desc "Updates a selected_state."
     params do
       requires :selected_state, type: String, desc: "Your selected state."
+      requires :token
     end
     route_param :id do
       post do
         authenticate!(params[:token])
-
         assignee = Assignee.get(params[:id])
-
         assignee.selected_state = params[:selected_state]
 
         if assignee.save
