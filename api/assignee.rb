@@ -28,7 +28,7 @@ class Api
          selected_state: assignee.selected_state,
          last_ping: assignee.pings.last.created_at,
          ticket: assignee.pings.last.ticket_id,
-         timediff: time_diff(Time.now,Time.parse(assignee.pings.last.created_at.to_s))}
+         timediff: assignee.last_ping}
       end
     end
 

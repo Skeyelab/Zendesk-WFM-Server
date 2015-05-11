@@ -9,4 +9,10 @@ class Assignee
 
   belongs_to :domain
   has n, :pings
+
+
+  def last_ping
+    return time_diff(Time.now,Time.parse(pings.last.created_at.to_s))
+  end
+
 end
