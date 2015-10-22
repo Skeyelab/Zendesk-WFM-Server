@@ -6,4 +6,5 @@ class Domain
   property :domain, String
 
   has n, :assignees
+  has n, :ticketpings
 end
