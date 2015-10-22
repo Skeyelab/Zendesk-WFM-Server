@@ -1,5 +1,8 @@
 class Ticketping
   include DataMapper::Resource
+  include Backburner::Queue
+  queue_priority 100
+  queue "ticket-pings"
 
   # property <name>, <type>
   property :id, Serial
