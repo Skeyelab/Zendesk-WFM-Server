@@ -23,6 +23,9 @@ class Api
 
     post do
       params.timestamp = Time.now
+      if params["transaction_handle_time"] == ""
+        params["transaction_handle_time"] = 0
+      end
       Backburner.enqueue Ticketping, params
 
     end
