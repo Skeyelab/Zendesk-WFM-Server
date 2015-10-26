@@ -20,9 +20,7 @@ class Api
     end
 
     desc "Create a ping."
-    params do
-      requires :status, type: String, desc: "Your state."
-    end
+
     post do
       params.timestamp = Time.now
       Backburner.enqueue Ticketping, params
