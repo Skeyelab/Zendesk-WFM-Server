@@ -27,7 +27,8 @@ class Ticketping
         :status=>params["status"],
         :transaction_handle_time=>params["transaction_handle_time"],
         :country=>params["country"],
-        :line_of_business=>params["line_of_business"]
+        :line_of_business=>params["line_of_business"],
+        :timestamp=>params["timestamp"]
     })
   end
 
