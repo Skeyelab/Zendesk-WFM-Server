@@ -8,6 +8,9 @@ class Ticketping
   property :id, Serial
   property :ticket_id, Integer
   property :status, String
+  property :transaction_handle_time, Integer
+  property :country, String
+  property :line_of_business, String
 
   property :created_at, DateTime, :index => true
   property :timestamp, DateTime, :index => true
@@ -17,7 +20,15 @@ class Ticketping
   def self.perform(params)
 
     domain=Domain.first_or_create({:domain=>params["domain"]})
-    ticketping = domain.ticketpings.first_or_create({:ticket_id=>params["ticket_id"]},{:created_at=>params["created_at"],:status=>params["status"]})
+    ticketping = domain.ticketpings.first_or_create(
+      {:ticket_id=>params["ticket_id"]},
+      {
+        :created_at=>params["created_at"],
+        :status=>params["status"],
+        :transaction_handle_time=>params["transaction_handle_time"],
+        :country=>params["country"],
+        :line_of_business=>params["line_of_business"]
+    })
   end
 
 end
