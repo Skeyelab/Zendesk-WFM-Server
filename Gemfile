@@ -35,7 +35,7 @@ gem 'will_paginate'
 
 gem 'foreman'
 gem 'dotenv'
-gem 'mysql2'
+gem 'pg'
 #gem 'mysql'
 gem 'newrelic_rpm'
 gem 'html-table', '~> 1.4.1'
