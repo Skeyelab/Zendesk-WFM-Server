@@ -9,6 +9,7 @@ ruby '2.3.1'
 # gem 'thin' # or mongrel
 # gem 'trinidad', :platform => 'jruby'
 gem 'unicorn'
+gem 'pg'
 
 # Optional JSON codec (faster performance)
 # gem 'oj'
@@ -35,7 +36,6 @@ gem 'will_paginate'
 
 gem 'foreman'
 gem 'dotenv'
-gem 'pg'
 #gem 'mysql'
 gem 'newrelic_rpm'
 gem 'html-table', '~> 1.4.1'
